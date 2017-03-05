@@ -5,31 +5,42 @@ package hostmonitor4j;
  */
 public interface Host {
 
-    boolean isOnline();
+    boolean isOnline() throws MonitorException;
+
+    State getState() throws MonitorException;
 
     void onStateChanged(StateListener sl);
 
+    long getUpdateInterval();
 
     /**
      * Changes host state update interval
+     *
      * @param interval Interval in milliseconds
      */
     void setUpdateInterval(long interval);
 
     /**
      * Turns on/off monitor
+     *
      * @param flag Set <code>true</code> to enable or <code>false</code> to disable
      */
     void enableMonitoring(boolean flag);
 
-    boolean isEnable();
+    boolean isMonitoringEnable();
 
     enum State {
-        ONLINE, OFFLINE;
+        ONLINE, OFFLINE
     }
 
     @FunctionalInterface
     interface StateListener {
         void onStateChanged(Host.State state);
+    }
+
+    class MonitorException extends RuntimeException {
+        public MonitorException() {
+            super("Monitoring disabled. State not valid");
+        }
     }
 }
