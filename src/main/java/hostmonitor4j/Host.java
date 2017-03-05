@@ -9,10 +9,17 @@ public interface Host {
 
     void onStateChanged(StateListener sl);
 
-    void setTimeout(long timeInMillis);
 
-    void setPollingInterval(long intervalInMillis);
+    /**
+     * Changes host state update interval
+     * @param interval Interval in milliseconds
+     */
+    void setUpdateInterval(long interval);
 
+    /**
+     * Turns on/off monitor
+     * @param flag Set <code>true</code> to enable or <code>false</code> to disable
+     */
     void enableMonitoring(boolean flag);
 
     boolean isEnable();
