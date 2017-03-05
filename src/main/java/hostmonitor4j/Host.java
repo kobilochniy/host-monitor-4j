@@ -16,9 +16,9 @@ public interface Host {
     /**
      * Changes host state update interval
      *
-     * @param interval Interval in milliseconds
+     * @param intervalInMillis Interval in milliseconds
      */
-    void setUpdateInterval(long interval);
+    void setUpdateInterval(long intervalInMillis);
 
     /**
      * Turns on/off monitor
@@ -39,7 +39,7 @@ public interface Host {
     }
 
     class MonitorException extends RuntimeException {
-        public MonitorException() {
+        MonitorException() {
             super("Monitoring disabled. State not valid");
         }
     }

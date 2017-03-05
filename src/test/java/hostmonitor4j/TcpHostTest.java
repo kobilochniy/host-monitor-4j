@@ -39,7 +39,6 @@ public class TcpHostTest {
         });
     }
 
-
     @Test
     public void youCanEnableMonitoringAndCheckHostState() throws InterruptedException {
         Assert.assertFalse("Monitor should be disable by default.", tcpHostMonitor.isMonitoringEnable());
@@ -169,5 +168,4 @@ public class TcpHostTest {
             logger.debug(this.getClass().getSimpleName() + " stopped.");
         }
     }
-
 }
