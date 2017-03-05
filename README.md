@@ -14,3 +14,6 @@ To run TCP host monitoring:
     System.out.println("Current update interval: "  + host.getUpdateInterval());
     
     host.enableMonitoring(false);
+
+See [TcpHostTest](https://github.com/Kosmachevskiy/host-monitor-4j/blob/master/src/test/java/hostmonitor4j/TcpHostTest.java) 
+for more details.
