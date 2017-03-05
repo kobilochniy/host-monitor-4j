@@ -1,4 +1,4 @@
-**Simple and easy-of-use host monitor for Java**
+**Simple and ease-of-use host monitor for Java**
 
 To run TCP host monitoring:
 
